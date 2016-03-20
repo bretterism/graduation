@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+#wrapper1 {
+	min-height: 100%;
+	min-height: 100vh;
+	background-color: #b56969;
+}
+#wrapper2 {
+	min-height: 100%;
+	background-color: #e6cf8b;
+}
+#push-down {
+	min-height: 25vh;
+}
+.col-sm-2 i {
+    display:block;
+    text-align:center;
+}
+.col-xs-12 i {
+	display:block;
+    text-align:center;
+    font-size: 120px;
+}
