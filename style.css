@@ -7,6 +7,10 @@ html, body {
 img {
     width: 100%;
 }
+.form-style {
+    padding: 5vh;
+    background-color: #9bafca;
+}
 .color1 {
 	background-color: #b56969;
 }
@@ -44,7 +48,6 @@ img {
     position: relative;
     margin: 10%;
     font-family: 'Hind', sans-serif;
-    font-weight: 400;
 }
 .content > p {
     font-size: 18px;
@@ -54,11 +57,13 @@ img {
     position: relative;
     text-align: center;
     font-family: 'Hind', sans-serif;
-    font-weight: 400;
     font-size: 48px;
 }
-#push-down {
+.push-down {
     min-height: 25vh;
+}
+.content-buffer {
+    min-height: 10vh;
 }
 .col-sm-2 i {
     display:block;
@@ -69,6 +74,7 @@ img {
     text-align:center;
     font-size: 120px;
 }
+
 
 
 /* Extra Extra small devices*/ 
