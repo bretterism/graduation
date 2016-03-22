@@ -11,17 +11,23 @@ img {
     padding: 5vh;
     background-color: #9bafca;
 }
-.color1 {
+.color0 {
 	background-color: #b56969;
 }
-.color2 {
+.color1 {
     background-color: #e6cf8b;
 }
-.color3 {
+.color2 {
     background-color: #22264b;
+}
+.color3 {
+    background-color: #b56969;
 }
 .container-fluid {
     min-height: 100vh;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
 }
 .container-wrapper {
     display: flex;
@@ -40,7 +46,6 @@ img {
     position: absolute;
     width: 107%;
     max-height: 25vh;
-    border: 1px solid black;
     overflow-x: hidden;
     overflow-y: scroll;
 }

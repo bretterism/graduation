@@ -9,14 +9,32 @@ $(document).ready(function() {
 		offText: 'no',
 		size: 'mini'
 	});
- //    // init controller
-	// var controller = new ScrollMagic.Controller();
 
-	// // create a scene
-	// new ScrollMagic.Scene({
-	//         duration: 100,  // the scene should last for a scroll distance of 100px
-	//         offset: 50      // start this scene after scrolling for 50px
-	//     })
-	//     .setPin("#my-sticky-element") // pins the element for the the scene's duration
-	//     .addTo(controller); // assign the scene to the controller
+	// init controller
+	var controller = new ScrollMagic.Controller();
+	
+	var scene0 = new ScrollMagic.Scene({
+    	triggerElement: '#scene-0'
+  	})
+  	.setClassToggle('.container-fluid', 'color0')
+  	.addTo(controller);
+
+	var scene1 = new ScrollMagic.Scene({
+    	triggerElement: '#scene-1'
+  	})
+  	.setClassToggle('.container-fluid', 'color1')
+  	.addTo(controller);
+
+  	var scene2 = new ScrollMagic.Scene({
+    	triggerElement: '#scene-2'
+  	})
+  	.setClassToggle('.container-fluid', 'color2')
+  	.addTo(controller);
+
+  	var scene3 = new ScrollMagic.Scene({
+    	triggerElement: '#scene-3'
+  	})
+  	.setClassToggle('.container-fluid', 'color3')
+  	.addTo(controller);
+
 });
