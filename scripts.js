@@ -36,6 +36,18 @@ $(document).ready(function() {
 		});
 	});
 
+	$('.fa-graduation-cap').on('click', function() {
+		TweenMax.to(window, 2, {scrollTo: {y: $('#scroll-1').position().top - 10}, ease: Power2.easeOut});
+	});
+	
+	$('.fa-laptop').on('click', function() {
+		TweenMax.to(window, 2, {scrollTo: {y: $('#scroll-2').position().top - 10}, ease: Power2.easeOut});
+	});
+
+	$('.fa-calendar').on('click', function() {
+		TweenMax.to(window, 2, {scrollTo: {y: $('#scroll-3').position().top - 10}, ease: Power2.easeOut});
+	});
+
 	// init controller
 	var controller = new ScrollMagic.Controller();
 	
@@ -70,20 +82,29 @@ $(document).ready(function() {
 	.setPin('#scene-nav')
 	.addTo(controller);
 
-	// function setRespSettings() {
-	// 	w = $(window).width();
- //        if (w < 480) {
- //    		sceneNav.offset('20vh');
-	// 	}
-	// }
-	// setRespSettings();
- //    $(window).resize(function() {
- //        setRespSettings();
- //    });
+	var scrollImg1 = new ScrollMagic.Scene({
+			triggerElement: '#banner-1'
+	})
+	.setTween(TweenMax.to('#banner-1', 1, {"scrollTo":{y:"max"}, ease: Power2.easeOut}))
+	.addTo(controller);
+	
+	var scrollImg1 = new ScrollMagic.Scene({
+			triggerElement: '#banner-2'
+	})
+	.setTween(TweenMax.to('#banner-2', 1, {"scrollTo":{y:"max"}, ease: Power2.easeOut}))
+	.addTo(controller);
+
+	var scrollImg1 = new ScrollMagic.Scene({
+			triggerElement: '#banner-3'
+	})
+	.setTween(TweenMax.to('#banner-3', 1, {"scrollTo":{y:"max"}, ease: Power2.easeOut}))
+	.addTo(controller);
 
   	$('.container-fluid').css({
 		"-webkit-transition": "background-color 300ms ease",
     	"-moz-transition": "background-color 300ms ease",
 		"transition": "background-color 300ms ease"
 	});
+
+	$('.scrollable-img').addClass('stop-scrolling');
 });
