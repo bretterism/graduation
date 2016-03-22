@@ -37,6 +37,13 @@ img {
     top: 0;
     overflow: hidden;
 }
+.nav {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+}
 .scrollable-img {
     display: block;
     position: absolute;
@@ -61,7 +68,10 @@ img {
     font-size: 48px;
 }
 .push-down {
-    min-height: 25vh;
+    min-height: 28vh;
+}
+.nav-buffer {
+    min-height: 5vh;
 }
 .content-buffer {
     min-height: 10vh;
@@ -105,10 +115,18 @@ img {
     .header-block {
         top: 25vh;
     }
+
 }
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-
+    .nav {
+        visibility: visible;
+        top:80vh;
+    }
+    .scrollable-img {
+        margin-right: 50px;
+        margin-left: 50px;
+    }    
 }
 
 /* Medium Devices, Desktops */

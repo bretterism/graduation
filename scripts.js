@@ -63,6 +63,24 @@ $(document).ready(function() {
   	.setClassToggle('.container-fluid', 'color3')
   	.addTo(controller);
 
+  	var sceneNav = new ScrollMagic.Scene({
+		triggerElement: '#scene-nav',
+		offset: "300vh"
+	})
+	.setPin('#scene-nav')
+	.addTo(controller);
+
+	// function setRespSettings() {
+	// 	w = $(window).width();
+ //        if (w < 480) {
+ //    		sceneNav.offset('20vh');
+	// 	}
+	// }
+	// setRespSettings();
+ //    $(window).resize(function() {
+ //        setRespSettings();
+ //    });
+
   	$('.container-fluid').css({
 		"-webkit-transition": "background-color 300ms ease",
     	"-moz-transition": "background-color 300ms ease",
