@@ -84,9 +84,9 @@ img {
     display:block;
     text-align:center;
 }
-.col-xs-12 i {
-    display:block;
-    text-align:center;
+.downarr {
+    position: absolute;
+    bottom: 0;
     font-size: 120px;
 }
 #downarrow {
@@ -94,7 +94,7 @@ img {
     -moz-transition:text-shadow 0.5s;
     -o-transition:text-shadow 0.5s;
     -ms-transition:text-shadow 0.5s;
-    transition:text-shadow 0.5s;
+    transition:text-shadow 0.5 s;
 }
 
 

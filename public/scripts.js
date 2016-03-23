@@ -9,6 +9,19 @@ $(document).ready(function() {
 		offText: 'no',
 		size: 'mini'
 	});
+
+	function alignDownArrow() {
+		var downarrHeight = $('#downarrow').height();
+		var downarrLeft = ($(window).width() / 2) - ($('.downarr').width() / 2);
+		$('.downarr').css('left', downarrLeft);
+		$('.downarr').css('height', downarrHeight);
+	}
+	
+	alignDownArrow();
+	$(window).resize(function() {
+		alignDownArrow();
+	});
+
 	var tl = new TimelineMax({
 		repeat: -1,
 		repeatDelay: 5
