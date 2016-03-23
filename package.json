@@ -1,0 +1,24 @@
+{
+  "name": "graduation",
+  "version": "1.0.0",
+  "description": "A graduation RSVP site.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bretterism/graduation.git"
+  },
+  "author": "Brett Hayes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bretterism/graduation/issues"
+  },
+  "homepage": "https://github.com/bretterism/graduation#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.8"
+  }
+}
