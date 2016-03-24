@@ -23,19 +23,38 @@
 </head>
 <body>
 	<div class="container-fluid" id="scene-0">
-		<div class="push-down"></div>
-		<div class="col-xs-4 col-sm-2 col-sm-offset-3">
-			<i class="fa fa-graduation-cap fa-5x flashy"></i>
+		<div class="welcome">
+			<h1 class="welcome-text"></h1>
 		</div>
-		<div class="col-xs-4 col-sm-2">
-			<i class="fa fa-laptop fa-5x flashy"></i>
+		<div class="row">
+			<div class="col-xs-4 col-sm-2 col-sm-offset-3">
+				<i class="fa fa-graduation-cap fa-5x flashy"></i>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<i class="fa fa-laptop fa-5x flashy"></i>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<i class="fa fa-calendar fa-5x flashy"></i>
+			</div>
 		</div>
-		<div class="col-xs-4 col-sm-2">
-			<i class="fa fa-calendar fa-5x flashy"></i>
+		<div class="row">
+			<form method="post" action="/code" id="form-code"
+				  class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5 code-block">
+				<div class="form-group">
+					<label for="secret-code">Please enter your code</label>
+					<input id="code-inp" name="code" type="text" class="form-control" placeholder="example: wxyz" required>
+				</div>
+				<button id="code-submit" class="btn btn-default btn-block">Submit</button>
+			</form>
 		</div>
 		<div class="downarr">
 			<i class="fa fa-angle-double-down" id="downarrow"></i>
 		</div>
+		<div class="push-down"></div>
+		<div class="push-down"></div>
+		<div class="push-down"></div>
+		<div class="push-down"></div>
+		<div class="push-down"></div>
 	</div>
 	<div class="container-fluid" id="scene-1">
 		<div id="scene-nav" class="nav">
@@ -81,7 +100,7 @@
 	<div class="container-fluid" id="scene-2">
 		<div class="container-wrapper" id="scroll-2">
 			<div class="scrollable-img" id="banner-2">
-				<img src="dog.jpg">
+				<img src="portland.jpg">
 			</div>
 			<h1 class="header-block">Where We Are Going</h1>
 			<div class="content">
