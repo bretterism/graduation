@@ -118,7 +118,8 @@ $(document).ready(function() {
 
 	// scroll down on the banner images
 	var scrollImg1 = new ScrollMagic.Scene({
-			triggerElement: '#banner-1'
+			triggerElement: '#banner-1',
+			offset: "150vh"
 	})
 	.setTween(TweenMax.to('#banner-1', 1, {"scrollTo":{y:"max"}, ease: Power2.easeOut}))
 	.addTo(controller);

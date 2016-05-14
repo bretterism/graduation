@@ -65,9 +65,9 @@ input, button {
 }
 .scrollable-img {
     display: block;
-    position: absolute;
+    position: relative;
     width: 107%;
-    max-height: 25vh;
+    max-height: 40vh;
     overflow-x: hidden;
     overflow-y: scroll;
 }
