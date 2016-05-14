@@ -188,6 +188,12 @@ $(document).ready(function() {
 				$('#downarrow').show();
 				alignDownArrow();
 
+				$('#form-code').html('');
+				
+				// add selfie
+				$('.img-selfie').css('display', 'block');
+				TweenLite.from('.img-selfie', 1, {css:{autoAlpha:0}});
+
 			}
 		});
 	});

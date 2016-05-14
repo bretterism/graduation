@@ -71,6 +71,15 @@ input, button {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+.img-selfie {
+    display:none;
+    visibility: hidden;
+    border-radius: 6px;
+    max-height:40vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
@@ -114,6 +123,13 @@ input, button {
     transition:text-shadow 0.5 s;
 }
 
+.img-fadein {
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
+}
 
 
 /* Extra Extra small devices*/ 
