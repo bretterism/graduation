@@ -10,11 +10,6 @@ $(document).ready(function() {
 	$('#downarrow').hide();
 
 	// initialize boostrap switches
-	$("[name='attending-ceremony']").bootstrapSwitch({
-		onText: 'yes',
-		offText: 'no',
-		size: 'mini'
-	});
 	$("[name='attending-open-house']").bootstrapSwitch({
 		onText: 'yes',
 		offText: 'no',
@@ -87,25 +82,25 @@ $(document).ready(function() {
 	var scene0 = new ScrollMagic.Scene({
     	triggerElement: '#scene-0'
   	})
-  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#b3c2bf', ease: Power3.easeOut}))
+  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#c6b9bb', ease: Power3.easeOut}))
   	.addTo(controller);
 
 	var scene1 = new ScrollMagic.Scene({
     	triggerElement: '#scene-1'
   	})
-  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#f0b98e', ease: Power3.easeOut}))
+  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#fdd4b4', ease: Power3.easeOut}))
   	.addTo(controller);
 
   	var scene2 = new ScrollMagic.Scene({
     	triggerElement: '#scene-2'
   	})
-  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#d1bbdd', ease: Power3.easeOut}))
+  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#d5e3ce', ease: Power3.easeOut}))
   	.addTo(controller);
 
   	var scene3 = new ScrollMagic.Scene({
     	triggerElement: '#scene-3'
   	})
-  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#eaaebd', ease: Power3.easeOut}))
+  	.setTween(TweenMax.to($('.container-fluid'), 1, {backgroundColor: '#F8FFC7', ease: Power3.easeOut}))
   	.addTo(controller);
 
   	// the navigation buttons
@@ -168,7 +163,7 @@ $(document).ready(function() {
 			$('#ceremonyInp').val(data.ceremonyInp);
 			$('#openHouseInp').val(data.openHouseInp);
 			$('#notesInp').val(data.notesInp);
-			TweenMax.to($('.container-fluid'), 2, {backgroundColor:"#99ccc2", ease:Power3.easeOut});
+			TweenMax.to($('.container-fluid'), 2, {backgroundColor:"#d98c90", ease:Power3.easeOut});
         });
         
         event.preventDefault();
