@@ -149,47 +149,44 @@ $(document).ready(function() {
 			'code': $('#code-inp').val()
 		};
 
-		$.ajax({
-            type        : 'POST',
-            url         : '/code',
-            data        : formData,
-            dataType    : 'json',
-            encode		: true
-        })
-        .done(function(data) {
+		$.post('/code', formData)
+         .done(function(data) {
 			$('.welcome-text').append('Welcome ' + data.name + '!');
 			$('#nameInp').val(data.name);
 			$('#emailInp').val(data.email);
 			$('#openHouseInp').val(data.openHouseInp);
 			$('#notesInp').val(data.notesInp);
 			TweenMax.to($('.container-fluid'), 2, {backgroundColor:"#d98c90", ease:Power3.easeOut});
-        });
+
+			// put focus on the button instead of the input field.
+	        // Prevents strange animations
+	        $('#code-submit').focus();
+	        TweenLite.to($('#form-code') , 2, {
+	        	autoAlpha: 0,
+				display:'block',
+				onComplete: function() {
+					// Let the user scroll
+					$('html, body').css({
+					    'overflow': 'auto',
+					    'height': 'auto'
+					});
+					// reveal the down arrow
+					$('#downarrow').show();
+					alignDownArrow();
+
+					$('#form-code').html('');
+					
+					// add selfie
+					$('.img-selfie').css('display', 'block');
+					TweenLite.from('.img-selfie', 1, {css:{autoAlpha:0}});
+				}
+			});
+         })
+         .fail(function(data) {
+
+         });
         
         event.preventDefault();
-        // put focus on the button instead of the input field.
-        // Prevents strange animations
-        $('#code-submit').focus();
-        TweenLite.to($('#form-code') , 2, {
-        	autoAlpha: 0,
-			display:'block',
-			onComplete: function() {
-				// Let the user scroll
-				$('html, body').css({
-				    'overflow': 'auto',
-				    'height': 'auto'
-				});
-				// reveal the down arrow
-				$('#downarrow').show();
-				alignDownArrow();
-
-				$('#form-code').html('');
-				
-				// add selfie
-				$('.img-selfie').css('display', 'block');
-				TweenLite.from('.img-selfie', 1, {css:{autoAlpha:0}});
-
-			}
-		});
 	});
 
 	// When a user submits the RSVP form

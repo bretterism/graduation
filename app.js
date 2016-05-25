@@ -17,16 +17,21 @@ app.get('/', function(req, res) {
 
 app.post('/code', function(req, res) {
 	User.findOne({code: req.body.code}, function(err, user) {
-		user.usedCode = Date.now();
-		user.save(function(err) {
-			if (err) throw err;
-			console.log('User ' + user.name + ' used code at: ' + user.usedCode);
-		});
-		res.json({
-			name: user.name,
-			email: user.email,
-			attOpenH: user.attOpenH
-		});
+		if (user) {
+			user.usedCode = Date.now();
+			user.save(function(err) {
+				if (err) throw err;
+				console.log('User ' + user.name + ' used code at: ' + user.usedCode);
+			});
+			res.status(200).json({
+				name: user.name,
+				email: user.email,
+				attOpenH: user.attOpenH
+			});
+		} else {
+			res.status(400).end()
+		}
+		
 	});
 });
 
