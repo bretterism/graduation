@@ -6,6 +6,7 @@ var userSchema = new Schema({
 	code: String,
 	email: String,
 	attOpenH: Boolean,
+	notes: String,
 	usedCode: Date,
 	RSVPd: Date
 });
