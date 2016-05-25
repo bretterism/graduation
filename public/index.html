@@ -190,7 +190,7 @@
 				
 				<div class="content-buffer"></div>
 				<div class="col-xs-6 col-xs-offset-3 form-style">
-					<form>
+					<form id="form-rsvp">
 						<div class="form-group">
 							<div class="row">
 								<label for="nameInp" class="control-label">Name</label>
@@ -212,7 +212,7 @@
 								<label for="openHouseInp" class="control-label">Are you attending the open house?</label>
 							</div>
 							<div class="row">
-								<input type="checkbox" name="attending-open-house">
+								<input id="openHouseInp" type="checkbox" name="attending-open-house" checked="checked">
 							</div>
 						</div>
 						<div class="form-group">
@@ -224,6 +224,7 @@
 								</textarea>
 							</div>
 						</div>
+						<button id="submit-rsvp" class="btn btn-default" type="submit">Submit RSVP</button>
 					</form>
 				</div>
 			</div>
@@ -233,6 +234,24 @@
 	<div class="footer">
 		<p class="text-center">This website made entirely by Brett Hayes.<br>Eight years of school just so I could make this website!</p>
 	</div>
+
+	<div id="success-modal" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title">RSVP Successful!</h4>
+      			</div>
+  				<div class="modal-body">
+      				<!-- Body goes here -->
+      				<p id="modal-text"></p>
+      			</div>
+      		<div class="modal-footer">
+      			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      		</div>
+  		</div>
+	</div>
+</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="bootstrap-switch.min.js"></script>

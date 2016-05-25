@@ -25,11 +25,14 @@ app.post('/code', function(req, res) {
 		res.json({
 			name: user.name,
 			email: user.email,
-			attCermny: user.attCermny,
-			attOpenH: user.attOpenH,
+			attOpenH: user.attOpenH
 		});
 	});
+});
 
+app.post('/form', function(req, res) {
+	console.log(req.body);
+	res.end();
 });
 
 var ip = 'localhost';

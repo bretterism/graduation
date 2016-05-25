@@ -160,7 +160,6 @@ $(document).ready(function() {
 			$('.welcome-text').append('Welcome ' + data.name + '!');
 			$('#nameInp').val(data.name);
 			$('#emailInp').val(data.email);
-			$('#ceremonyInp').val(data.ceremonyInp);
 			$('#openHouseInp').val(data.openHouseInp);
 			$('#notesInp').val(data.notesInp);
 			TweenMax.to($('.container-fluid'), 2, {backgroundColor:"#d98c90", ease:Power3.easeOut});
@@ -192,4 +191,26 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	// When a user submits the RSVP form
+	$('#form-rsvp').submit(function(event) {
+		var formData = {
+			'name':			$('#nameInp').val(),
+			'email':		$('#emailInp').val(),
+			'attOpenH':		$('#openHouseInp').is(':checked'),
+			'notes':		$('#notesInp').val()
+		};
+
+		$.post('/form', formData)
+        .done(function(data) {
+        	if ($('#openHouseInp').is(':checked')) {
+        		$('#modal-text').html('I\'m glad you will make it! Thank you for letting me know. I am looking forward to seeing you!<br>-Brett');
+        	} else {
+        		$('#modal-text').html('Sorry you can\'t make it, but thanks for letting me know! If you change your mind, just change your RSVP.<br>-Brett');
+        	}
+			$('#success-modal').modal('show');
+        });
+        
+        event.preventDefault();
+	})
 });

@@ -5,7 +5,6 @@ var userSchema = new Schema({
 	name: {type: String, required: true},
 	code: String,
 	email: String,
-	attCermny: Boolean,
 	attOpenH: Boolean,
 	usedCode: Date,
 	RSVPd: Date
