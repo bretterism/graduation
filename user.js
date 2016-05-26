@@ -11,6 +11,17 @@ var userSchema = new Schema({
 	RSVPd: Date
 });
 
+userSchema.statics.report = function(cb) {
+	var users = []
+	this.find({}, 'code name email attOpenH notes usedCode RSVPd', function(err, response) {
+		response.forEach(function(user) {
+			users.push(user);
+		});
+		cb(users);
+	});
+}
+
+mongoose.model('User', userSchema)
 var User = mongoose.model('User', userSchema);
 
 module.exports = User;

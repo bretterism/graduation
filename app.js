@@ -23,9 +23,30 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-	res.sendFile('/public/index.html');
+	res.sendFile(__dirname+'/public/index.html');
 });
 
+app.get('/report', function(req, res) {
+	res.sendFile(__dirname+'/public/reports.html');
+});
+
+app.get('/reportdata', function(req, res) {
+	User.report(function(users) {
+		var data = []
+		for (var i = 0; i < users.length; i++) {
+			data.push({
+				code: users[i].code,
+				name: (users[i].name == undefined) ? '' : users[i].name,
+				email: (users[i].email == undefined) ? '' : users[i].email,
+				viewed: (users[i].viewed == undefined) ? '' : 'Yes',
+				rsvp: (users[i].rsvp == undefined) ? '' : 'Yes',
+				notes: (users[i].notes == undefined) ? '' : users[i].notes
+			});
+		}
+
+		res.status(200).json(data);
+	});
+});
 
 // When a user enters the code to enter the site.
 app.post('/code', function(req, res) {
