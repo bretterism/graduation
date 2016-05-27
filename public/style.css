@@ -99,8 +99,9 @@ input, button {
   overflow: hidden;
 }
 .content {
+    display: block;
     position: relative;
-    margin: 10%;
+    margin: 0 10% 0 10%;
     font-family: 'Hind', sans-serif;
 }
 .content > p {
@@ -166,7 +167,7 @@ input, button {
         /*top: 15vh;*/
     }
     .header-block {
-        top: 15vh;
+        /*top: 15vh;*/
         text-align: center; 
     }
     .push-down {
@@ -175,13 +176,13 @@ input, button {
 }
 @media only screen and (min-width : 400px) {
     .header-block {
-        top: 20vh;
+        /*top: 20vh;*/
     }
 }
 /*Extra Small Devides, Phones*/
 @media only screen and (min-width : 480px) {
     .header-block {
-        top: 25vh;
+        /*top: 25vh;*/
     }
 }
 /* Small Devices, Tablets */
