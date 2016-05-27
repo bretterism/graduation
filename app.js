@@ -50,6 +50,7 @@ app.get('/reportdata', function(req, res) {
 
 // When a user enters the code to enter the site.
 app.post('/code', function(req, res) {
+	req.body.code = req.body.code.toLowerCase();
 	User.findOne({code: req.body.code}, function(err, user) {
 		if (user) {
 			// save the code for the form submission later.
