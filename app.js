@@ -36,11 +36,11 @@ app.get('/reportdata', function(req, res) {
 		for (var i = 0; i < users.length; i++) {
 			data.push({
 				code: users[i].code,
-				name: (users[i].name == undefined) ? '' : users[i].name,
-				email: (users[i].email == undefined) ? '' : users[i].email,
-				viewed: (users[i].viewed == undefined) ? '' : 'Yes',
-				rsvp: (users[i].rsvp == undefined) ? '' : 'Yes',
-				notes: (users[i].notes == undefined) ? '' : users[i].notes
+				name: (users[i].name == null) ? '' : users[i].name,
+				email: (users[i].email == null) ? '' : users[i].email,
+				viewed: (users[i].usedCode == null) ? '' : 'Yes',
+				rsvp: (users[i].RSVPd == null) ? '' : 'Yes',
+				notes: (users[i].notes == null) ? '' : users[i].notes
 			});
 		}
 
@@ -88,7 +88,7 @@ app.post('/form', function(req, res) {
 });
 
 var ip = 'localhost';
-var port = 8082
+var port = 8085
 var server = http.createServer(app);
 server.listen(port, ip, function() {
 	console.log('listening at http://' + ip + ':' + port)
