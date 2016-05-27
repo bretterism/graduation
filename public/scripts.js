@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 
 	// Modify for mobile
-	if ($(window).width() < 375) {
+	if ($(window).width() < 400) {
 		$.each($('.header-block').closest('h1'), function() {
 			$(this).replaceWith('<h2 style="text-align: center;">'+this.innerHTML+'</h2>');
 		});
