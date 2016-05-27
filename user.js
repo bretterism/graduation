@@ -13,7 +13,7 @@ var userSchema = new Schema({
 
 userSchema.statics.report = function(cb) {
 	var users = []
-	this.find({}, 'code name email attOpenH notes usedCode RSVPd', function(err, response) {
+	this.find({}, 'name email attOpenH notes usedCode RSVPd', function(err, response) {
 		response.forEach(function(user) {
 			users.push(user);
 		});
