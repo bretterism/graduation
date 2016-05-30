@@ -3,6 +3,11 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/u/bs-3.3.6/jqc-1.12.3,dt-1.10.12/datatables.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.0/css/buttons.dataTables.min.css"/>
+	<style>
+		.single-line {
+			white-space: nowrap;
+		}
+	</style>
 
 	<script type="text/javascript" src="https://cdn.datatables.net/u/bs-3.3.6/jqc-1.12.3,dt-1.10.12/datatables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.0/js/dataTables.buttons.min.js"></script>
@@ -23,7 +28,9 @@
 						{data: "name"},
 						{data: "email"},
 						{data: "viewed"},
+						{data: "viewedDate", className: 'single-line'},
 						{data: "rsvp"},
+						{data: "rsvpDate", className: 'single-line'},
 						{data: "notes"}
 					],
 					paging: false,
@@ -43,8 +50,10 @@
 				<tr>
 					<td>Name</td>
 					<td>Email</td>
-					<td>Viewed Page</td>
+					<td>Viewed Date</td> 
+					<td>Viewed Date</td>
 					<td>RSVP</td>
+					<td>RSVP Date</td>
 					<td>Notes</td>
 				</tr>
 			</thead>

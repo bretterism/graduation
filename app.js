@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./user');
 var session = require('express-session');
+var moment = require('moment');
 
 mongoose.connect('mongodb://localhost/gradDB');
 
@@ -34,12 +35,24 @@ app.get('/reportdata', function(req, res) {
 	User.report(function(users) {
 		var data = []
 		for (var i = 0; i < users.length; i++) {
+			var attending = (function() {
+				if (users[i].attOpenH == null) { 
+					return ''; 
+				}
+				return (users[i].attOpenH === true) ? 'Attending' : 'Not Attending';
+			}());
+
+			viewedDate = new Date(users[i].usedCode);
+			rsvpDate = new Date(users[i].RSVPd);
+
 			data.push({
 				code: users[i].code,
 				name: (users[i].name == null) ? '' : users[i].name,
-				email: (users[i].email == null) ? '' : users[i].email,
+				email: (users[i].email == null) ? '' : users[i].email.toString().replace(',', '\n'),
 				viewed: (users[i].usedCode == null) ? '' : 'Yes',
-				rsvp: (users[i].RSVPd == null) ? '' : 'Yes',
+				viewedDate: (users[i].usedCode == null) ? '' : viewedDate.toDateString(),
+				rsvp: attending,
+				rsvpDate: (users[i].RSVPd == null) ? '' : rsvpDate.toDateString(),
 				notes: (users[i].notes == null) ? '' : users[i].notes
 			});
 		}
